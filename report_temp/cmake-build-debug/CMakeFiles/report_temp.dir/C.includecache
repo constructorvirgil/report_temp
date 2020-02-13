@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/virgil/report_temp/report_temp/tempdb.c
+tempdb.h
+/home/virgil/report_temp/report_temp/tempdb.h
+stdio.h
+/home/virgil/report_temp/report_temp/stdio.h
+time.h
+-
+stdlib.h
+-
+string.h
+-
+
+/home/virgil/report_temp/report_temp/tempdb.h
+sqlite3.h
+-
+
