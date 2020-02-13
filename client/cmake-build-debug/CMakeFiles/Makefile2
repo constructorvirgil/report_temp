@@ -44,21 +44,21 @@ RM = /home/virgil/Documents/clion-2019.3.3/bin/cmake/linux/bin/cmake -E remove -
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/virgil/report_temp/report_temp
+CMAKE_SOURCE_DIR = /home/virgil/report_temp/client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/virgil/report_temp/report_temp/cmake-build-debug
+CMAKE_BINARY_DIR = /home/virgil/report_temp/client/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/report_temp.dir/all
+all: CMakeFiles/client.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
-clean: CMakeFiles/report_temp.dir/clean
+clean: CMakeFiles/client.dir/clean
 
 .PHONY : clean
 
@@ -68,31 +68,31 @@ preinstall:
 .PHONY : preinstall
 
 #=============================================================================
-# Target rules for target CMakeFiles/report_temp.dir
+# Target rules for target CMakeFiles/client.dir
 
 # All Build rule for target.
-CMakeFiles/report_temp.dir/all:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/depend
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target report_temp"
-.PHONY : CMakeFiles/report_temp.dir/all
+CMakeFiles/client.dir/all:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/depend
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/virgil/report_temp/client/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target client"
+.PHONY : CMakeFiles/client.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/report_temp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/report_temp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/report_temp.dir/rule
+CMakeFiles/client.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/virgil/report_temp/client/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/client.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/virgil/report_temp/client/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/client.dir/rule
 
 # Convenience name for target.
-report_temp: CMakeFiles/report_temp.dir/rule
+client: CMakeFiles/client.dir/rule
 
-.PHONY : report_temp
+.PHONY : client
 
 # clean rule for target.
-CMakeFiles/report_temp.dir/clean:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/clean
-.PHONY : CMakeFiles/report_temp.dir/clean
+CMakeFiles/client.dir/clean:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/clean
+.PHONY : CMakeFiles/client.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

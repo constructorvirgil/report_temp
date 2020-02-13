@@ -3,6 +3,11 @@
 
 CMakeFiles/report_temp.dir/main.c.o
  /home/virgil/report_temp/report_temp/main.c
+ /home/virgil/report_temp/report_temp/simple_server.h
+ /home/virgil/report_temp/report_temp/tempdb.h
+CMakeFiles/report_temp.dir/simple_server.c.o
+ /home/virgil/report_temp/report_temp/simple_server.c
+ /home/virgil/report_temp/report_temp/simple_server.h
  /home/virgil/report_temp/report_temp/tempdb.h
 CMakeFiles/report_temp.dir/tempdb.c.o
  /home/virgil/report_temp/report_temp/tempdb.c

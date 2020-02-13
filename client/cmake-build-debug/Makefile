@@ -48,10 +48,10 @@ RM = /home/virgil/Documents/clion-2019.3.3/bin/cmake/linux/bin/cmake -E remove -
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/virgil/report_temp/report_temp
+CMAKE_SOURCE_DIR = /home/virgil/report_temp/client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/virgil/report_temp/report_temp/cmake-build-debug
+CMAKE_BINARY_DIR = /home/virgil/report_temp/client/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles /home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/virgil/report_temp/client/cmake-build-debug/CMakeFiles /home/virgil/report_temp/client/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/virgil/report_temp/client/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named report_temp
+# Target rules for targets named client
 
 # Build rule for target.
-report_temp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 report_temp
-.PHONY : report_temp
+client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 client
+.PHONY : client
 
 # fast build rule for target.
-report_temp/fast:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/build
-.PHONY : report_temp/fast
+client/fast:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
+.PHONY : client/fast
 
 main.o: main.c.o
 
@@ -129,7 +129,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/main.c.o
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -138,7 +138,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/main.c.i
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -147,62 +147,8 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/main.c.s
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main.c.s
 .PHONY : main.c.s
-
-simple_server.o: simple_server.c.o
-
-.PHONY : simple_server.o
-
-# target to build an object file
-simple_server.c.o:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/simple_server.c.o
-.PHONY : simple_server.c.o
-
-simple_server.i: simple_server.c.i
-
-.PHONY : simple_server.i
-
-# target to preprocess a source file
-simple_server.c.i:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/simple_server.c.i
-.PHONY : simple_server.c.i
-
-simple_server.s: simple_server.c.s
-
-.PHONY : simple_server.s
-
-# target to generate assembly for a file
-simple_server.c.s:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/simple_server.c.s
-.PHONY : simple_server.c.s
-
-tempdb.o: tempdb.c.o
-
-.PHONY : tempdb.o
-
-# target to build an object file
-tempdb.c.o:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/tempdb.c.o
-.PHONY : tempdb.c.o
-
-tempdb.i: tempdb.c.i
-
-.PHONY : tempdb.i
-
-# target to preprocess a source file
-tempdb.c.i:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/tempdb.c.i
-.PHONY : tempdb.c.i
-
-tempdb.s: tempdb.c.s
-
-.PHONY : tempdb.s
-
-# target to generate assembly for a file
-tempdb.c.s:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/tempdb.c.s
-.PHONY : tempdb.c.s
 
 # Help Target
 help:
@@ -211,17 +157,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... report_temp"
+	@echo "... client"
 	@echo "... edit_cache"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... simple_server.o"
-	@echo "... simple_server.i"
-	@echo "... simple_server.s"
-	@echo "... tempdb.o"
-	@echo "... tempdb.i"
-	@echo "... tempdb.s"
 .PHONY : help
 
 

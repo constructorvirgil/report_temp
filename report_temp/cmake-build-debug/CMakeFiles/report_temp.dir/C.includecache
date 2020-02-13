@@ -6,17 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/home/virgil/report_temp/report_temp/tempdb.c
-tempdb.h
-/home/virgil/report_temp/report_temp/tempdb.h
-stdio.h
-/home/virgil/report_temp/report_temp/stdio.h
-time.h
+/home/virgil/report_temp/report_temp/simple_server.c
+unistd.h
 -
 stdlib.h
 -
+stdio.h
+-
 string.h
 -
+errno.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+tempdb.h
+/home/virgil/report_temp/report_temp/tempdb.h
+simple_server.h
+/home/virgil/report_temp/report_temp/simple_server.h
+
+/home/virgil/report_temp/report_temp/simple_server.h
 
 /home/virgil/report_temp/report_temp/tempdb.h
 sqlite3.h

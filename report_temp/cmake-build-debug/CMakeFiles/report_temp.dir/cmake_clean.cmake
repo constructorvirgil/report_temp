@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/report_temp.dir/main.c.o"
+  "CMakeFiles/report_temp.dir/simple_server.c.o"
   "CMakeFiles/report_temp.dir/tempdb.c.o"
   "report_temp"
   "report_temp.pdb"

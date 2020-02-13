@@ -77,6 +77,12 @@
 		<Unit filename="/home/virgil/report_temp/report_temp/main.c">
 			<Option target="report_temp"/>
 		</Unit>
+		<Unit filename="/home/virgil/report_temp/report_temp/simple_server.c">
+			<Option target="report_temp"/>
+		</Unit>
+		<Unit filename="/home/virgil/report_temp/report_temp/simple_server.h">
+			<Option target="report_temp"/>
+		</Unit>
 		<Unit filename="/home/virgil/report_temp/report_temp/tempdb.c">
 			<Option target="report_temp"/>
 		</Unit>

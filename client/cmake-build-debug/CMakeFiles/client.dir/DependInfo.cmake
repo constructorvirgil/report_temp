@@ -4,9 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/virgil/report_temp/report_temp/main.c" "/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles/report_temp.dir/main.c.o"
-  "/home/virgil/report_temp/report_temp/simple_server.c" "/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles/report_temp.dir/simple_server.c.o"
-  "/home/virgil/report_temp/report_temp/tempdb.c" "/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles/report_temp.dir/tempdb.c.o"
+  "/home/virgil/report_temp/client/main.c" "/home/virgil/report_temp/client/cmake-build-debug/CMakeFiles/client.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

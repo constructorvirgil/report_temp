@@ -49,15 +49,16 @@ int read_rec()
 int tpdb_open(void)
 {
     int rc = 0;
-    char sql[256] = {0};
+    char sql[LEN_SQL_SATE] = {0};
 
     //open database
-    rc = sqlite3_open("temp_rec.db", &db);
+    rc = sqlite3_open_v2("temp_rec.db", &db,SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE,NULL);
     if (rc != SQLITE_OK) {
         fprintf(stderr, "Cannot open database: %s\n", sqlite3_errmsg(db));
         sqlite3_close(db);
         exit(TPDB_ERROR);
     }
+
     strcpy(sql,"CREATE TABLE temp_rec(mac CHAR(6),time DATETIME, temp DOUBLE); ");
     rc = sqlite3_exec(db, sql, 0, 0, &err_msg);
     if (rc != SQLITE_OK && rc != 1 ) {
@@ -70,20 +71,19 @@ int tpdb_open(void)
     return 0;
 }
 
-int tpdb_report(char* mac,char* temp)
+int tpdb_report(char* mac,char* datetime,char* temp)
 {
-    int rc = 0;
-    char sql[256] = {0};
-    char datetime[48] = {0};
 
-    get_datetime_now(datetime,sizeof(datetime));
+    int rc = 0;
+    char sql[LEN_SQL_SATE] = {0};
+
     sprintf(sql,"INSERT INTO %s (mac,time,temp) VALUES (\"%s\",\"%s\",%s);","temp_rec",mac,datetime,temp);
     rc = sqlite3_exec(db, sql, 0, 0, &err_msg);
     if (rc != SQLITE_OK) {
         fprintf(stderr, "SQL error: %s\n", err_msg);
         sqlite3_free(err_msg);
         sqlite3_close(db);
-        exit(TPDB_ERROR);
+        exit(EXIT_FAILURE);
     }
     return 0;
 }
