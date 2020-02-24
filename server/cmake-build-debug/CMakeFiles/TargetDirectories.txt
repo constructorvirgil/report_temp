@@ -1,3 +1,3 @@
-/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles/report_temp.dir
-/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/server.dir
+/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/edit_cache.dir

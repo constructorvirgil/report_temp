@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/virgil/report_temp/server/main.c
-stdio.h
--
-tempdb.h
-/home/virgil/report_temp/server/tempdb.h
-multipro_server.h
-/home/virgil/report_temp/server/multipro_server.h
-packer.h
-/home/virgil/report_temp/server/packer.h
-
 /home/virgil/report_temp/server/multipro_server.c
 unistd.h
 -
@@ -44,46 +34,12 @@ packer.h
 
 /home/virgil/report_temp/server/multipro_server.h
 
-/home/virgil/report_temp/server/packer.c
-packer.h
-/home/virgil/report_temp/server/packer.h
-string.h
--
-unistd.h
--
-stdlib.h
--
-
 /home/virgil/report_temp/server/packer.h
 stdint.h
 -
 
-/home/virgil/report_temp/server/tdata.c
-tdata.h
-/home/virgil/report_temp/server/tdata.h
-string.h
--
-time.h
--
-fcntl.h
--
-stdio.h
--
-unistd.h
--
-
 /home/virgil/report_temp/server/tdata.h
 stdint.h
--
-
-/home/virgil/report_temp/server/tempdb.c
-tempdb.h
-/home/virgil/report_temp/server/tempdb.h
-stdio.h
--
-stdlib.h
--
-string.h
 -
 
 /home/virgil/report_temp/server/tempdb.h

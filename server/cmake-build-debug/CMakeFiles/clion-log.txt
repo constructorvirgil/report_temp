@@ -1,4 +1,4 @@
-/home/virgil/clion-2019.3.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/virgil/report_temp/report_temp
+/home/virgil/clion-2019.3.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/virgil/report_temp/server
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/virgil/report_temp/report_temp/cmake-build-debug
+-- Build files have been written to: /home/virgil/report_temp/server/cmake-build-debug

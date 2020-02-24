@@ -43,10 +43,10 @@ RM = /home/virgil/clion-2019.3.3/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/virgil/report_temp/report_temp
+CMAKE_SOURCE_DIR = /home/virgil/report_temp/server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/virgil/report_temp/report_temp/cmake-build-debug
+CMAKE_BINARY_DIR = /home/virgil/report_temp/server/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/report_temp.dir/depend.make
@@ -59,74 +59,74 @@ include CMakeFiles/report_temp.dir/flags.make
 
 CMakeFiles/report_temp.dir/main.c.o: CMakeFiles/report_temp.dir/flags.make
 CMakeFiles/report_temp.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/report_temp.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/report_temp.dir/main.c.o   -c /home/virgil/report_temp/report_temp/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/report_temp.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/report_temp.dir/main.c.o   -c /home/virgil/report_temp/server/main.c
 
 CMakeFiles/report_temp.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/report_temp.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/virgil/report_temp/report_temp/main.c > CMakeFiles/report_temp.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/virgil/report_temp/server/main.c > CMakeFiles/report_temp.dir/main.c.i
 
 CMakeFiles/report_temp.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/report_temp.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/report_temp/main.c -o CMakeFiles/report_temp.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/server/main.c -o CMakeFiles/report_temp.dir/main.c.s
 
 CMakeFiles/report_temp.dir/tempdb.c.o: CMakeFiles/report_temp.dir/flags.make
 CMakeFiles/report_temp.dir/tempdb.c.o: ../tempdb.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/report_temp.dir/tempdb.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/report_temp.dir/tempdb.c.o   -c /home/virgil/report_temp/report_temp/tempdb.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/report_temp.dir/tempdb.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/report_temp.dir/tempdb.c.o   -c /home/virgil/report_temp/server/tempdb.c
 
 CMakeFiles/report_temp.dir/tempdb.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/report_temp.dir/tempdb.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/virgil/report_temp/report_temp/tempdb.c > CMakeFiles/report_temp.dir/tempdb.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/virgil/report_temp/server/tempdb.c > CMakeFiles/report_temp.dir/tempdb.c.i
 
 CMakeFiles/report_temp.dir/tempdb.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/report_temp.dir/tempdb.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/report_temp/tempdb.c -o CMakeFiles/report_temp.dir/tempdb.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/server/tempdb.c -o CMakeFiles/report_temp.dir/tempdb.c.s
 
-CMakeFiles/report_temp.dir/simple_server.c.o: CMakeFiles/report_temp.dir/flags.make
-CMakeFiles/report_temp.dir/simple_server.c.o: ../simple_server.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/report_temp.dir/simple_server.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/report_temp.dir/simple_server.c.o   -c /home/virgil/report_temp/report_temp/simple_server.c
+CMakeFiles/report_temp.dir/multipro_server.c.o: CMakeFiles/report_temp.dir/flags.make
+CMakeFiles/report_temp.dir/multipro_server.c.o: ../multipro_server.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/report_temp.dir/multipro_server.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/report_temp.dir/multipro_server.c.o   -c /home/virgil/report_temp/server/multipro_server.c
 
-CMakeFiles/report_temp.dir/simple_server.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/report_temp.dir/simple_server.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/virgil/report_temp/report_temp/simple_server.c > CMakeFiles/report_temp.dir/simple_server.c.i
+CMakeFiles/report_temp.dir/multipro_server.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/report_temp.dir/multipro_server.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/virgil/report_temp/server/multipro_server.c > CMakeFiles/report_temp.dir/multipro_server.c.i
 
-CMakeFiles/report_temp.dir/simple_server.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/report_temp.dir/simple_server.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/report_temp/simple_server.c -o CMakeFiles/report_temp.dir/simple_server.c.s
+CMakeFiles/report_temp.dir/multipro_server.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/report_temp.dir/multipro_server.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/server/multipro_server.c -o CMakeFiles/report_temp.dir/multipro_server.c.s
 
 CMakeFiles/report_temp.dir/packer.c.o: CMakeFiles/report_temp.dir/flags.make
 CMakeFiles/report_temp.dir/packer.c.o: ../packer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/report_temp.dir/packer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/report_temp.dir/packer.c.o   -c /home/virgil/report_temp/report_temp/packer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/report_temp.dir/packer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/report_temp.dir/packer.c.o   -c /home/virgil/report_temp/server/packer.c
 
 CMakeFiles/report_temp.dir/packer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/report_temp.dir/packer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/virgil/report_temp/report_temp/packer.c > CMakeFiles/report_temp.dir/packer.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/virgil/report_temp/server/packer.c > CMakeFiles/report_temp.dir/packer.c.i
 
 CMakeFiles/report_temp.dir/packer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/report_temp.dir/packer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/report_temp/packer.c -o CMakeFiles/report_temp.dir/packer.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/server/packer.c -o CMakeFiles/report_temp.dir/packer.c.s
 
 CMakeFiles/report_temp.dir/tdata.c.o: CMakeFiles/report_temp.dir/flags.make
 CMakeFiles/report_temp.dir/tdata.c.o: ../tdata.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/report_temp.dir/tdata.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/report_temp.dir/tdata.c.o   -c /home/virgil/report_temp/report_temp/tdata.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/report_temp.dir/tdata.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/report_temp.dir/tdata.c.o   -c /home/virgil/report_temp/server/tdata.c
 
 CMakeFiles/report_temp.dir/tdata.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/report_temp.dir/tdata.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/virgil/report_temp/report_temp/tdata.c > CMakeFiles/report_temp.dir/tdata.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/virgil/report_temp/server/tdata.c > CMakeFiles/report_temp.dir/tdata.c.i
 
 CMakeFiles/report_temp.dir/tdata.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/report_temp.dir/tdata.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/report_temp/tdata.c -o CMakeFiles/report_temp.dir/tdata.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/server/tdata.c -o CMakeFiles/report_temp.dir/tdata.c.s
 
 # Object files for target report_temp
 report_temp_OBJECTS = \
 "CMakeFiles/report_temp.dir/main.c.o" \
 "CMakeFiles/report_temp.dir/tempdb.c.o" \
-"CMakeFiles/report_temp.dir/simple_server.c.o" \
+"CMakeFiles/report_temp.dir/multipro_server.c.o" \
 "CMakeFiles/report_temp.dir/packer.c.o" \
 "CMakeFiles/report_temp.dir/tdata.c.o"
 
@@ -135,12 +135,12 @@ report_temp_EXTERNAL_OBJECTS =
 
 report_temp: CMakeFiles/report_temp.dir/main.c.o
 report_temp: CMakeFiles/report_temp.dir/tempdb.c.o
-report_temp: CMakeFiles/report_temp.dir/simple_server.c.o
+report_temp: CMakeFiles/report_temp.dir/multipro_server.c.o
 report_temp: CMakeFiles/report_temp.dir/packer.c.o
 report_temp: CMakeFiles/report_temp.dir/tdata.c.o
 report_temp: CMakeFiles/report_temp.dir/build.make
 report_temp: CMakeFiles/report_temp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable report_temp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable report_temp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/report_temp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,6 +153,6 @@ CMakeFiles/report_temp.dir/clean:
 .PHONY : CMakeFiles/report_temp.dir/clean
 
 CMakeFiles/report_temp.dir/depend:
-	cd /home/virgil/report_temp/report_temp/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/virgil/report_temp/report_temp /home/virgil/report_temp/report_temp /home/virgil/report_temp/report_temp/cmake-build-debug /home/virgil/report_temp/report_temp/cmake-build-debug /home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles/report_temp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/virgil/report_temp/server/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/virgil/report_temp/server /home/virgil/report_temp/server /home/virgil/report_temp/server/cmake-build-debug /home/virgil/report_temp/server/cmake-build-debug /home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/report_temp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/report_temp.dir/depend
 

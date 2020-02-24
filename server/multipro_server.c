@@ -12,7 +12,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include "tempdb.h"
-#include "simple_server.h"
+#include "multipro_server.h"
 #include "packer.h"
 
 int listen_fd = -1;
@@ -111,5 +111,6 @@ int recv_handle(int fd)
     tbyte2tdata(&tb,&td);
     tpdb_report(&td);
     printf("insert: [%s][%s][%s]\n",td.mac,td.dtime,td.temp);
+    
 }
 

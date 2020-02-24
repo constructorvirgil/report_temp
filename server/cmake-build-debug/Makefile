@@ -48,10 +48,10 @@ RM = /home/virgil/clion-2019.3.3/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/virgil/report_temp/report_temp
+CMAKE_SOURCE_DIR = /home/virgil/report_temp/server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/virgil/report_temp/report_temp/cmake-build-debug
+CMAKE_BINARY_DIR = /home/virgil/report_temp/server/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles /home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/virgil/report_temp/server/cmake-build-debug/CMakeFiles /home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/virgil/report_temp/server/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named report_temp
+# Target rules for targets named server
 
 # Build rule for target.
-report_temp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 report_temp
-.PHONY : report_temp
+server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 server
+.PHONY : server
 
 # fast build rule for target.
-report_temp/fast:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/build
-.PHONY : report_temp/fast
+server/fast:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
+.PHONY : server/fast
 
 main.o: main.c.o
 
@@ -129,7 +129,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/main.c.o
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -138,7 +138,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/main.c.i
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -147,8 +147,35 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/main.c.s
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/main.c.s
 .PHONY : main.c.s
+
+multipro_server.o: multipro_server.c.o
+
+.PHONY : multipro_server.o
+
+# target to build an object file
+multipro_server.c.o:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/multipro_server.c.o
+.PHONY : multipro_server.c.o
+
+multipro_server.i: multipro_server.c.i
+
+.PHONY : multipro_server.i
+
+# target to preprocess a source file
+multipro_server.c.i:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/multipro_server.c.i
+.PHONY : multipro_server.c.i
+
+multipro_server.s: multipro_server.c.s
+
+.PHONY : multipro_server.s
+
+# target to generate assembly for a file
+multipro_server.c.s:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/multipro_server.c.s
+.PHONY : multipro_server.c.s
 
 packer.o: packer.c.o
 
@@ -156,7 +183,7 @@ packer.o: packer.c.o
 
 # target to build an object file
 packer.c.o:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/packer.c.o
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/packer.c.o
 .PHONY : packer.c.o
 
 packer.i: packer.c.i
@@ -165,7 +192,7 @@ packer.i: packer.c.i
 
 # target to preprocess a source file
 packer.c.i:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/packer.c.i
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/packer.c.i
 .PHONY : packer.c.i
 
 packer.s: packer.c.s
@@ -174,35 +201,8 @@ packer.s: packer.c.s
 
 # target to generate assembly for a file
 packer.c.s:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/packer.c.s
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/packer.c.s
 .PHONY : packer.c.s
-
-simple_server.o: simple_server.c.o
-
-.PHONY : simple_server.o
-
-# target to build an object file
-simple_server.c.o:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/simple_server.c.o
-.PHONY : simple_server.c.o
-
-simple_server.i: simple_server.c.i
-
-.PHONY : simple_server.i
-
-# target to preprocess a source file
-simple_server.c.i:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/simple_server.c.i
-.PHONY : simple_server.c.i
-
-simple_server.s: simple_server.c.s
-
-.PHONY : simple_server.s
-
-# target to generate assembly for a file
-simple_server.c.s:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/simple_server.c.s
-.PHONY : simple_server.c.s
 
 tdata.o: tdata.c.o
 
@@ -210,7 +210,7 @@ tdata.o: tdata.c.o
 
 # target to build an object file
 tdata.c.o:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/tdata.c.o
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/tdata.c.o
 .PHONY : tdata.c.o
 
 tdata.i: tdata.c.i
@@ -219,7 +219,7 @@ tdata.i: tdata.c.i
 
 # target to preprocess a source file
 tdata.c.i:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/tdata.c.i
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/tdata.c.i
 .PHONY : tdata.c.i
 
 tdata.s: tdata.c.s
@@ -228,7 +228,7 @@ tdata.s: tdata.c.s
 
 # target to generate assembly for a file
 tdata.c.s:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/tdata.c.s
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/tdata.c.s
 .PHONY : tdata.c.s
 
 tempdb.o: tempdb.c.o
@@ -237,7 +237,7 @@ tempdb.o: tempdb.c.o
 
 # target to build an object file
 tempdb.c.o:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/tempdb.c.o
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/tempdb.c.o
 .PHONY : tempdb.c.o
 
 tempdb.i: tempdb.c.i
@@ -246,7 +246,7 @@ tempdb.i: tempdb.c.i
 
 # target to preprocess a source file
 tempdb.c.i:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/tempdb.c.i
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/tempdb.c.i
 .PHONY : tempdb.c.i
 
 tempdb.s: tempdb.c.s
@@ -255,7 +255,7 @@ tempdb.s: tempdb.c.s
 
 # target to generate assembly for a file
 tempdb.c.s:
-	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/tempdb.c.s
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/tempdb.c.s
 .PHONY : tempdb.c.s
 
 # Help Target
@@ -265,17 +265,17 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... report_temp"
+	@echo "... server"
 	@echo "... edit_cache"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... multipro_server.o"
+	@echo "... multipro_server.i"
+	@echo "... multipro_server.s"
 	@echo "... packer.o"
 	@echo "... packer.i"
 	@echo "... packer.s"
-	@echo "... simple_server.o"
-	@echo "... simple_server.i"
-	@echo "... simple_server.s"
 	@echo "... tdata.o"
 	@echo "... tdata.i"
 	@echo "... tdata.s"

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/report_temp.dir/main.c.o"
+  "CMakeFiles/report_temp.dir/multipro_server.c.o"
   "CMakeFiles/report_temp.dir/packer.c.o"
-  "CMakeFiles/report_temp.dir/simple_server.c.o"
   "CMakeFiles/report_temp.dir/tdata.c.o"
   "CMakeFiles/report_temp.dir/tempdb.c.o"
   "report_temp"

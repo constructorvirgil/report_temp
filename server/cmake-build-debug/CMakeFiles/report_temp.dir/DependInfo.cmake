@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/virgil/report_temp/report_temp/main.c" "/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles/report_temp.dir/main.c.o"
-  "/home/virgil/report_temp/report_temp/packer.c" "/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles/report_temp.dir/packer.c.o"
-  "/home/virgil/report_temp/report_temp/simple_server.c" "/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles/report_temp.dir/simple_server.c.o"
-  "/home/virgil/report_temp/report_temp/tdata.c" "/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles/report_temp.dir/tdata.c.o"
-  "/home/virgil/report_temp/report_temp/tempdb.c" "/home/virgil/report_temp/report_temp/cmake-build-debug/CMakeFiles/report_temp.dir/tempdb.c.o"
+  "/home/virgil/report_temp/server/main.c" "/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/report_temp.dir/main.c.o"
+  "/home/virgil/report_temp/server/multipro_server.c" "/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/report_temp.dir/multipro_server.c.o"
+  "/home/virgil/report_temp/server/packer.c" "/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/report_temp.dir/packer.c.o"
+  "/home/virgil/report_temp/server/tdata.c" "/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/report_temp.dir/tdata.c.o"
+  "/home/virgil/report_temp/server/tempdb.c" "/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/report_temp.dir/tempdb.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
