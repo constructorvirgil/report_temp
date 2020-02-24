@@ -2,12 +2,12 @@
 // Created by virgil on 2/23/20.
 //
 
+#include "tdata.h"
 #include <string.h>
 #include <time.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <unistd.h>
-#include "tdata.h"
 
 int get_data(struct mac_context* m, struct tdata* td)
 {

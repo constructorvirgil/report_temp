@@ -42,7 +42,7 @@ int sendn(int fd,uint8_t* buf,int size)
     return n;
 }
 
-int send_pack(struct pack* pk)
+int send_pack(int fd,struct pack_data* pk)
 {
     int r;
     uint8_t* buf;
@@ -55,7 +55,7 @@ int send_pack(struct pack* pk)
     {
         buf[2+i] = pk->data[i];
     }
-    if((r = sendn(pk->fd,buf,pk->len+2)) <= 0){
+    if((r = sendn(fd,buf,pk->len+2)) <= 0){
         free(buf);
         return -2;
     }

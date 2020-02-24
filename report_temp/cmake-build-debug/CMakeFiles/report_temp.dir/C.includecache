@@ -6,47 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/virgil/report_temp/report_temp/packer.h
-stdint.h
+/home/virgil/report_temp/report_temp/tdata.c
+tdata.h
+/home/virgil/report_temp/report_temp/tdata.h
+string.h
 -
-
-/home/virgil/report_temp/report_temp/simple_server.c
-unistd.h
+time.h
 -
-stdlib.h
+fcntl.h
 -
 stdio.h
 -
-string.h
+unistd.h
 -
-errno.h
--
-sys/types.h
--
-sys/socket.h
--
-netinet/in.h
--
-arpa/inet.h
--
-tempdb.h
-/home/virgil/report_temp/report_temp/tempdb.h
-simple_server.h
-/home/virgil/report_temp/report_temp/simple_server.h
-packer.h
-/home/virgil/report_temp/report_temp/packer.h
-
-/home/virgil/report_temp/report_temp/simple_server.h
 
 /home/virgil/report_temp/report_temp/tdata.h
 stdint.h
 -
-
-/home/virgil/report_temp/report_temp/tempdb.h
-sqlite3.h
--
-stdint.h
--
-tdata.h
-/home/virgil/report_temp/report_temp/tdata.h
 

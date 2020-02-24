@@ -76,11 +76,10 @@ int main(int argc, char **argv)
         }
         tdata2tbyte(&td,&tb);
 
-        struct pack pk;
-        pk.fd = conn_fd;
-        pk.len = sizeof(tb.byte);
+        struct pack_data pk;
         memcpy(pk.data,tb.byte,sizeof(tb.byte));
-        send_pack(&pk);
+        pk.len = sizeof(tb.byte);
+        send_pack(conn_fd,&pk);
         /*if((r = send_pack(&pk)) < 0){
             close(conn_fd);
             return -2;

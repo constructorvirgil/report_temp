@@ -34,20 +34,20 @@ int read_rec()
 
 int tpdb_open(void)
 {
-    int rc = 0;
+    int r;
     char sql[LEN_SQL_STATE] = {0};
 
     //open database
-    rc = sqlite3_open_v2(DB_PATH, &db,SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE,NULL);
-    if (rc != SQLITE_OK) {
+    r = sqlite3_open_v2(DB_PATH, &db, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE, NULL);
+    if (r != SQLITE_OK) {
         fprintf(stderr, "Cannot open database: %s\n", sqlite3_errmsg(db));
         sqlite3_close(db);
         exit(EXIT_FAILURE);
     }
 
     strcpy(sql,"CREATE TABLE "TB_NAME"(mac CHAR(6),time DATETIME, temp DOUBLE); ");
-    rc = sqlite3_exec(db, sql, 0, 0, &err_msg);
-    if (rc != SQLITE_OK && rc != 1 ) {
+    r = sqlite3_exec(db, sql, 0, 0, &err_msg);
+    if (r != SQLITE_OK && r != 1 ) {
         fprintf(stderr, "SQL error: %s\n", err_msg);
         sqlite3_free(err_msg);
         sqlite3_close(db);
@@ -59,12 +59,12 @@ int tpdb_open(void)
 
 int tpdb_report(struct tdata* td)
 {
-    int rc;
+    int r;
     char sql[LEN_SQL_STATE] = {0};
 
     sprintf(sql,"INSERT INTO %s (mac,time,temp) VALUES (\"%s\",\"%s\",%s);",TB_NAME,td->mac,td->dtime,td->temp);
-    rc = sqlite3_exec(db, sql, 0, 0, &err_msg);
-    if (rc != SQLITE_OK) {
+    r = sqlite3_exec(db, sql, 0, 0, &err_msg);
+    if (r != SQLITE_OK) {
         fprintf(stderr, "SQL error: %s\n", err_msg);
         sqlite3_free(err_msg);
         sqlite3_close(db);
@@ -75,12 +75,12 @@ int tpdb_report(struct tdata* td)
 
 int tpdb_clear_all(void)
 {
-    int rc = 0;
+    int r;
     char sql[256] = {0};
 
     sprintf(sql,"DELETE FROM temp_rec;");
-    rc = sqlite3_exec(db, sql, 0, 0, &err_msg);
-    if (rc != SQLITE_OK) {
+    r = sqlite3_exec(db, sql, 0, 0, &err_msg);
+    if (r != SQLITE_OK) {
         fprintf(stderr, "SQL error: %s\n", err_msg);
         sqlite3_free(err_msg);
         sqlite3_close(db);
