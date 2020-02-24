@@ -13,21 +13,20 @@
 #include <arpa/inet.h>
 #include "tempdb.h"
 #include "simple_server.h"
-
+#include "packer.h"
 
 int listen_fd = -1;
 
 int server_init(int port)
 {
     struct sockaddr_in      serv_addr;
-    char                    buf[1024];
 
     //init socket
     listen_fd = socket(AF_INET, SOCK_STREAM, 0);
     if(listen_fd < 0 )
     {
-        perror("Failed to create socket!\n");
-        exit(SERVER_ERROR);
+        perror("Failed to create socket!");
+        exit(EXIT_FAILURE);
     }
 
     memset(&serv_addr, 0, sizeof(serv_addr));
@@ -35,17 +34,18 @@ int server_init(int port)
     serv_addr.sin_port = htons(port);
     serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
 
+    //set socket addr reusable
     int ok = 1;
-    if( setsockopt(listen_fd, SOL_SOCKET, SO_REUSEADDR, &ok, sizeof(int)) == -1)
+    if(setsockopt(listen_fd, SOL_SOCKET, SO_REUSEADDR, &ok, sizeof(int)) == -1)
     {
-        perror("Set sock failed!\n");
+        perror("Set sock failed!");
         close(listen_fd);
         exit(EXIT_FAILURE);
     }
 
-    if( bind(listen_fd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0 )
+    if(bind(listen_fd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0 )
     {
-        perror("Bind socket failed!\n");
+        perror("Bind socket failed!");
         close(listen_fd);
         exit(EXIT_FAILURE);
     }
@@ -59,93 +59,57 @@ int server_init(int port)
         if(new_fd < 0)
         {
             perror("Accept client failed!");
-            exit(SERVER_ERROR);
+            close(listen_fd);
+            exit(EXIT_FAILURE);
         }
 
+#define __DEBUG
+#ifdef __DEBUG
+        while(1)
+        {
+            recv_handle(new_fd);
+        }
+#else
         //create a progress to heandle fd
-        int ret = fork();
-        if(ret < 0)
+        //two fork() avoid zombile proccess
+        int ret;
+        if((ret = fork()) < 0)
         {
-            perror("Accept client failed!");
-            exit(SERVER_ERROR);
+            perror("Fork error!");
+            exit(EXIT_FAILURE);
+        }if(ret == 0){
+            if((ret = fork()) < 0){
+                perror("Fork error!");
+                exit(EXIT_FAILURE);
+            }else if(ret == 0){
+                //child progress
+                recv_handle(new_fd);
+            }
+            //parent exit first
+            exit(EXIT_SUCCESS);
         }
-        if(ret == 0)
-        {
-            continue;
-        }
-
-        //child progress
-        recv_handle(new_fd);
+#endif
     }
 
     close(listen_fd);
 }
 
 
-int recv_temp(int fd,char* mac,char* datetime,char* temp)
+int recv_handle(int fd)
 {
-
-    char buf[LEN_BUF] = {0};
-    int size = 1+LEN_MAC+LEN_DATETIME+LEN_TEMP;
-
-    int n = read(fd,buf,size);
-    if(n < 0){
-        return -1;
-    }
-    while(n < size)
-    {
-        int new_n = read(fd,temp+n,size-n);
-        if(new_n < 0){
-            return -1;
-        }
-        n += new_n;
+    int r;
+    struct pack_data pk;
+    struct tdata td;
+    if((r = recv_pack(fd,&pk)) < 0){
+        printf("Client[%d] disconnected",fd);
+        close(fd);
+        exit(EXIT_FAILURE);
     }
 
-    //unpack
-
-    for(int i=0;i<LEN_MAC;i++)
-    {
-        mac[i] = buf[i];
-    }
-    for(int i = 0;i<LEN_DATETIME;i++)
-    {
-        datetime[i] = buf[LEN_MAC + i];
-    }
-    for(int i = 0;i<LEN_TEMP;i++)
-    {
-        temp[i] = buf[LEN_MAC+LEN_DATETIME+i];
-    }
-
-    return 0;
+    struct tbyte tb;
+    memcpy(tb.byte,pk.data,pk.len);
+    tbyte2tdata(&tb,&td);
+    tpdb_report(&td);
+    printf("insert: [%s][%s][%s]\n",td.mac,td.dtime,td.temp);
 }
 
-int recv_handle(int new_fd)
-{
-    while(1)
-    {
-        int rc = 0;
-        char mac[LEN_MAC+1] = {0};
-        char datetime[LEN_DATETIME+1] = {0};
-        char temp[LEN_TEMP+1] = {0};
-
-        char flag = 0;
-        do{
-            rc = read(new_fd,&flag,1);
-            if(rc < 0){
-                perror("Client disconnected!\n");
-                close(new_fd);
-                exit(EXIT_FAILURE);
-            }
-        }while(flag != (char)0xde);
-
-        rc = recv_temp(new_fd,mac,datetime,temp);
-        if(rc != 0){
-            perror("Client disconnected!\n");
-            close(new_fd);
-            exit(EXIT_FAILURE);
-        }
-
-        tpdb_report(mac,datetime,temp);
-
-    }
-}

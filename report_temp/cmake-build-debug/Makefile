@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/virgil/Documents/clion-2019.3.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/virgil/clion-2019.3.3/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/virgil/Documents/clion-2019.3.3/bin/cmake/linux/bin/cmake -E remove -f
+RM = /home/virgil/clion-2019.3.3/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/virgil/report_temp/report_temp/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/virgil/Documents/clion-2019.3.3/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/virgil/clion-2019.3.3/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/virgil/Documents/clion-2019.3.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/virgil/clion-2019.3.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -150,6 +150,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/main.c.s
 .PHONY : main.c.s
 
+packer.o: packer.c.o
+
+.PHONY : packer.o
+
+# target to build an object file
+packer.c.o:
+	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/packer.c.o
+.PHONY : packer.c.o
+
+packer.i: packer.c.i
+
+.PHONY : packer.i
+
+# target to preprocess a source file
+packer.c.i:
+	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/packer.c.i
+.PHONY : packer.c.i
+
+packer.s: packer.c.s
+
+.PHONY : packer.s
+
+# target to generate assembly for a file
+packer.c.s:
+	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/packer.c.s
+.PHONY : packer.c.s
+
 simple_server.o: simple_server.c.o
 
 .PHONY : simple_server.o
@@ -176,6 +203,33 @@ simple_server.s: simple_server.c.s
 simple_server.c.s:
 	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/simple_server.c.s
 .PHONY : simple_server.c.s
+
+tdata.o: tdata.c.o
+
+.PHONY : tdata.o
+
+# target to build an object file
+tdata.c.o:
+	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/tdata.c.o
+.PHONY : tdata.c.o
+
+tdata.i: tdata.c.i
+
+.PHONY : tdata.i
+
+# target to preprocess a source file
+tdata.c.i:
+	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/tdata.c.i
+.PHONY : tdata.c.i
+
+tdata.s: tdata.c.s
+
+.PHONY : tdata.s
+
+# target to generate assembly for a file
+tdata.c.s:
+	$(MAKE) -f CMakeFiles/report_temp.dir/build.make CMakeFiles/report_temp.dir/tdata.c.s
+.PHONY : tdata.c.s
 
 tempdb.o: tempdb.c.o
 
@@ -216,9 +270,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... packer.o"
+	@echo "... packer.i"
+	@echo "... packer.s"
 	@echo "... simple_server.o"
 	@echo "... simple_server.i"
 	@echo "... simple_server.s"
+	@echo "... tdata.o"
+	@echo "... tdata.i"
+	@echo "... tdata.s"
 	@echo "... tempdb.o"
 	@echo "... tempdb.i"
 	@echo "... tempdb.s"

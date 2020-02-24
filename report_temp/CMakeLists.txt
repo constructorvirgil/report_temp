@@ -3,5 +3,5 @@ project(report_temp C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(report_temp main.c tempdb.c tempdb.h simple_server.c simple_server.h)
+add_executable(report_temp main.c tempdb.c simple_server.c packer.c tdata.c)
 target_link_libraries(report_temp sqlite3)

@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/client.dir/main.c.o"
+  "CMakeFiles/client.dir/packer.c.o"
+  "CMakeFiles/client.dir/tdata.c.o"
   "client"
   "client.pdb"
 )

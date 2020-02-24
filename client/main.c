@@ -11,70 +11,11 @@
 #include <stdlib.h>
 #include <fcntl.h>
 
-#define LEN_MAC 6
-#define LEN_DATETIME 19
-#define LEN_TEMP 4
+#include "tdata.h"
+#include "packer.h"
 
-
-char machine_id[6]="PI0001";
-char send_buf[30] = {0};
-char temp_file_path[] = "/home/virgil/report_temp/client/temp.txt";
-
-int get_datetime_now(char* datetime,int size)
-{
-    time_t t ;
-    t= time(NULL);
-    struct tm* tmp = localtime(&t);
-    if(tmp == NULL){
-        perror("localtime");
-        exit(1);
-    }
-    strftime(datetime, size, "%F %T", tmp);
-    return 0;
-}
-
-int get_temp(char* path,char* temp,int size)
-{
-    FILE* f = open(path,O_RDONLY);
-    if(f == 0){
-        perror("File open failed!\n");
-        exit(EXIT_FAILURE);
-    }
-    int ret = read(f,temp,size);
-    if(ret < 0){
-        perror("Read file failed!\n");
-        close(f);
-        exit(EXIT_FAILURE);
-    }
-    close(f);
-    return 0;
-}
-
-int send_temp(int fd)
-{
-    char datetime[128] ={0};
-    char temp[4] = {0};
-    char flag = 0xde;
-    int size = 1+LEN_MAC+LEN_DATETIME+LEN_TEMP;
-
-    get_datetime_now(datetime,size);
-    get_temp(temp_file_path,temp,4);
-    sprintf(send_buf,"%c%s%s%s%c",flag,machine_id,datetime,temp,size);
-
-    int n = write(fd,send_buf,size);
-    if(n < 0){
-        return -1;
-    }
-    while(n < size){
-        int new_n = write(fd,send_buf+n,size-n);
-        if(new_n < 0){
-            return -1;
-        }
-        n -= new_n;
-    }
-    return 0;
-}
-
+#define MACID "PI0001"
+#define TPATH "../temp.txt"
 
 int main(int argc, char **argv)
 {
@@ -86,6 +27,10 @@ int main(int argc, char **argv)
     int                     conn_fd = -1;
     struct sockaddr_in      serv_addr;
     char                    buf[1024];
+    if(argv[1] == NULL){
+        printf("invalid argument!\n");
+        return -1;
+    }
     int port = atoi(argv[1]);
     if(port < 0){
         printf("arguments error!\n");
@@ -117,13 +62,30 @@ int main(int argc, char **argv)
 
     while(1)
     {
-        int ret = send_temp(conn_fd);
-        printf("%s\n",send_buf);
-        if(ret < 0){
-            perror("Cannot connect server!\n");
+        int r;
+        struct mac_context m;
+        struct tdata td;
+        struct tbyte tb;
+        strcpy(m.id,MACID);
+        strcpy(m.tpath,TPATH);
+
+        if((r = get_data(&m,&td)) < 0){
+            printf("get temp pdata failed!\n");
             close(conn_fd);
-            exit(EXIT_FAILURE);
+            return -1;
         }
+        tdata2tbyte(&td,&tb);
+
+        struct pack pk;
+        pk.fd = conn_fd;
+        pk.len = sizeof(tb.byte);
+        memcpy(pk.data,tb.byte,sizeof(tb.byte));
+        send_pack(&pk);
+        /*if((r = send_pack(&pk)) < 0){
+            close(conn_fd);
+            return -2;
+        }*/
+
         sleep(1);
     }
     close(conn_fd);
