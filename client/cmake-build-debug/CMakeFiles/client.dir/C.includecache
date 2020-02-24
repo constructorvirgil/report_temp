@@ -6,36 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/virgil/report_temp/client/main.c
-stdio.h
--
-errno.h
--
-string.h
--
-sys/types.h
--
-sys/socket.h
--
-netinet/in.h
--
-arpa/inet.h
--
-unistd.h
--
-time.h
--
-unistd.h
--
-stdlib.h
--
-fcntl.h
--
-tdata.h
-/home/virgil/report_temp/client/tdata.h
-packer.h
-/home/virgil/report_temp/client/packer.h
-
 /home/virgil/report_temp/client/packer.c
 packer.h
 /home/virgil/report_temp/client/packer.h
@@ -47,24 +17,6 @@ stdlib.h
 -
 
 /home/virgil/report_temp/client/packer.h
-stdint.h
--
-
-/home/virgil/report_temp/client/tdata.c
-tdata.h
-/home/virgil/report_temp/client/tdata.h
-string.h
--
-time.h
--
-fcntl.h
--
-stdio.h
--
-unistd.h
--
-
-/home/virgil/report_temp/client/tdata.h
 stdint.h
 -
 

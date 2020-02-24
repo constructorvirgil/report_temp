@@ -42,6 +42,16 @@ stdint.h
 stdint.h
 -
 
+/home/virgil/report_temp/server/tempdb.c
+tempdb.h
+/home/virgil/report_temp/server/tempdb.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
 /home/virgil/report_temp/server/tempdb.h
 sqlite3.h
 -

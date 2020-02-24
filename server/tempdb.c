@@ -23,8 +23,7 @@ int read_rec()
 
     rc = sqlite3_exec(db, sql, callback, 0, &err_msg);
     if (rc != SQLITE_OK ) {
-        fprintf(stderr, "Failed to select data\n");
-        fprintf(stderr, "SQL error: %s\n", err_msg);
+        fprintf(stderr, "Read records failed: %s\n", err_msg);
         sqlite3_free(err_msg);
         sqlite3_close(db);
         exit(EXIT_FAILURE);
@@ -48,7 +47,7 @@ int tpdb_open(void)
     strcpy(sql,"CREATE TABLE "TB_NAME"(mac CHAR(6),time DATETIME, temp DOUBLE); ");
     r = sqlite3_exec(db, sql, 0, 0, &err_msg);
     if (r != SQLITE_OK && r != 1 ) {
-        fprintf(stderr, "SQL error: %s\n", err_msg);
+        fprintf(stderr, "Create table failed: %s\n", err_msg);
         sqlite3_free(err_msg);
         sqlite3_close(db);
         exit(EXIT_FAILURE);
@@ -65,10 +64,9 @@ int tpdb_report(struct tdata* td)
     sprintf(sql,"INSERT INTO %s (mac,time,temp) VALUES (\"%s\",\"%s\",%s);",TB_NAME,td->mac,td->dtime,td->temp);
     r = sqlite3_exec(db, sql, 0, 0, &err_msg);
     if (r != SQLITE_OK) {
-        fprintf(stderr, "SQL error: %s\n", err_msg);
+        fprintf(stderr, "Insert data failed: %s\n", err_msg);
         sqlite3_free(err_msg);
-        sqlite3_close(db);
-        exit(EXIT_FAILURE);
+        return -1;
     }
     return 0;
 }
@@ -81,7 +79,7 @@ int tpdb_clear_all(void)
     sprintf(sql,"DELETE FROM temp_rec;");
     r = sqlite3_exec(db, sql, 0, 0, &err_msg);
     if (r != SQLITE_OK) {
-        fprintf(stderr, "SQL error: %s\n", err_msg);
+        fprintf(stderr, "Remove all data failed: %s\n", err_msg);
         sqlite3_free(err_msg);
         sqlite3_close(db);
         exit(EXIT_FAILURE);

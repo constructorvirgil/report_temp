@@ -1,3 +1,8 @@
+
+
+#include "tdata.h"
+#include "packer.h"
+
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
@@ -10,37 +15,85 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
+#include <getopt.h>
 
-#include "tdata.h"
-#include "packer.h"
 
-#define MACID "PI0001"
-#define TPATH "../temp.txt"
+char macid[7] = {0};
+char tpath[256] = {0};
+int port;
 
-int main(int argc, char **argv)
+struct option long_options[] = {
+        {"mac", required_argument, NULL, 'm'},
+        {"path", required_argument, NULL, 'l'},
+        {"port", required_argument, NULL, 'p'}
+};
+
+static void usage(void)
 {
-    if(argc < 1){
-        printf("too few arguments!\n");
-        return -1;
+    fprintf(stderr,
+            "client [option]\n"
+            "  -p|--port <port>                    Connect to which port.\n"
+            "  -m|--mac <machine_id>              Specify machine id.\n"
+            "  -f|--path <path_of_temperature>     Specify where to get temperature.\n"
+            "  -?|-h|--help                 This information.\n");
+};
+
+int main(int argc, char *argv[])
+{
+    int opt;
+    int arg_count = 0;
+
+    if (argc == 1)
+    {
+        usage();
+        return 1;
     }
+
+    while ((opt = getopt_long(argc, argv, "m:p:l:", long_options, NULL)) != EOF)
+    {
+        switch (opt)
+        {
+            case 0:
+                break;
+            case 'm':
+                strcpy(macid,optarg);
+                arg_count++;
+                break;
+            case 'p':
+                port = atoi(optarg);
+                arg_count++;
+                break;
+            case 'l':
+                strcpy(tpath,optarg);
+                arg_count++;
+                break;
+            case ':':
+            case 'h':
+            case '?':
+            default:
+                usage();
+                return 2;
+        }
+    }
+
+    if(arg_count != 3){
+        usage();
+        return 3;
+    }
+
+
+    printf("Machine ID      :%s\n",macid);
+    printf("Port            :%d\n",port);
+    printf("Tempfile Path   :%s\n",tpath);
 
     int                     conn_fd = -1;
     struct sockaddr_in      serv_addr;
     char                    buf[1024];
-    if(argv[1] == NULL){
-        printf("invalid argument!\n");
-        return -1;
-    }
-    int port = atoi(argv[1]);
-    if(port < 0){
-        printf("arguments error!\n");
-        return -1;
-    }
 
     conn_fd = socket(AF_INET, SOCK_STREAM, 0);
     if(conn_fd < 0)
     {
-        printf("create socket failure: %s\n", strerror(errno));
+        perror("Create socket failed!");
         return -1;
     }
 
@@ -49,16 +102,17 @@ int main(int argc, char **argv)
     serv_addr.sin_port = htons(port);
     inet_aton( "127.0.0.1", &serv_addr.sin_addr );
 
-    printf("connect to port %d\n",port);
+    printf("connect to port %d...\n",port);
 
-    if( connect(conn_fd, (struct sockaddr *)&serv_addr, sizeof(serv_addr))  < 0)
+    if(connect(conn_fd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0)
     {
-        perror("Cannot connect server!\n");
+        perror("Cannot connect to server!");
         close(conn_fd);
         exit(EXIT_FAILURE);
     }
 
     printf("connected successfully!\n");
+    printf("trying to send message...\n");
 
     while(1)
     {
@@ -66,11 +120,11 @@ int main(int argc, char **argv)
         struct mac_context m;
         struct tdata td;
         struct tbyte tb;
-        strcpy(m.id,MACID);
-        strcpy(m.tpath,TPATH);
+        strcpy(m.id,macid);
+        strcpy(m.tpath,tpath);
 
         if((r = get_data(&m,&td)) < 0){
-            printf("get temp pdata failed!\n");
+            fprintf(stderr,"Get temperature failed!\n");
             close(conn_fd);
             return -1;
         }
@@ -79,13 +133,15 @@ int main(int argc, char **argv)
         struct pack_data pk;
         memcpy(pk.data,tb.byte,sizeof(tb.byte));
         pk.len = sizeof(tb.byte);
-        send_pack(conn_fd,&pk);
-        /*if((r = send_pack(&pk)) < 0){
+        if((r = send_pack(conn_fd,&pk)) < 0){
+            fprintf(stderr,"Disconnected with server\n");
             close(conn_fd);
             return -2;
-        }*/
+        }
+        printf("send:[%s][%s][%s]\n",td.mac,td.dtime,td.temp);
 
         sleep(1);
     }
+
     close(conn_fd);
 }

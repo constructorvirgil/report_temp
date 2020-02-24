@@ -68,12 +68,9 @@ int recv_pack(int fd,struct pack_data* pk)
     int r;
     uint8_t buf[PACK_DATA_MAXSIZE + 16] = {0};
     while(buf[0] != PACK_HEAD){
-        r = read(fd,buf,1);
-
-        /*
         if((r = read(fd,buf,1)) <= 0){
             return -1;
-        }*/
+        }
     }
     //get length
     if((r = read(fd,buf+1,1)) <= 0){

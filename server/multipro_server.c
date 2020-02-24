@@ -63,7 +63,7 @@ int server_init(int port)
             exit(EXIT_FAILURE);
         }
 
-#define __DEBUG
+//#define __DEBUG
 #ifdef __DEBUG
         while(1)
         {
@@ -83,7 +83,10 @@ int server_init(int port)
                 exit(EXIT_FAILURE);
             }else if(ret == 0){
                 //child progress
-                recv_handle(new_fd);
+                while(1)
+                {
+                    recv_handle(new_fd);
+                }
             }
             //parent exit first
             exit(EXIT_SUCCESS);
@@ -109,8 +112,9 @@ int recv_handle(int fd)
     struct tbyte tb;
     memcpy(tb.byte,pk.data,pk.len);
     tbyte2tdata(&tb,&td);
-    tpdb_report(&td);
-    printf("insert: [%s][%s][%s]\n",td.mac,td.dtime,td.temp);
-    
+    if(tpdb_report(&td) == 0){
+        printf("insert: [%s][%s][%s]\n",td.mac,td.dtime,td.temp);
+    }
+
 }
 
