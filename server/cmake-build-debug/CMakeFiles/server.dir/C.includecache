@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/virgil/report_temp/server/ll.h
+stddef.h
+-
+
 /home/virgil/report_temp/server/multipro_server.c
 unistd.h
 -
@@ -25,12 +29,18 @@ netinet/in.h
 -
 arpa/inet.h
 -
+pthread.h
+-
+sys/mman.h
+-
 tempdb.h
 /home/virgil/report_temp/server/tempdb.h
 multipro_server.h
 /home/virgil/report_temp/server/multipro_server.h
 packer.h
 /home/virgil/report_temp/server/packer.h
+ll.h
+/home/virgil/report_temp/server/ll.h
 
 /home/virgil/report_temp/server/multipro_server.h
 
@@ -40,16 +50,6 @@ stdint.h
 
 /home/virgil/report_temp/server/tdata.h
 stdint.h
--
-
-/home/virgil/report_temp/server/tempdb.c
-tempdb.h
-/home/virgil/report_temp/server/tempdb.h
-stdio.h
--
-stdlib.h
--
-string.h
 -
 
 /home/virgil/report_temp/server/tempdb.h

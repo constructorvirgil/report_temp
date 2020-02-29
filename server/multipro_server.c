@@ -11,11 +11,16 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <pthread.h>
+#include <sys/mman.h>
 #include "tempdb.h"
 #include "multipro_server.h"
 #include "packer.h"
 
 int listen_fd = -1;
+struct tdata* datas;
+pthread_mutex_t* m;
+
 
 int server_init(int port)
 {
@@ -53,6 +58,17 @@ int server_init(int port)
     listen(listen_fd, 5);
     printf("server[%d] is listening on port %d\n", listen_fd,port);
 
+    m = (pthread_mutex_t* )mmap(NULL,sizeof(pthread_mutex_t),PROT_READ|PROT_WRITE,MAP_SHARED|MAP_ANON,-1,0);
+
+    //make mutex
+    pthread_mutexattr_t attr;
+    pthread_mutexattr_init(&attr);
+    pthread_mutexattr_setpshared(&attr, PTHREAD_PROCESS_SHARED);
+    pthread_mutex_init(m,&attr);
+    pthread_mutexattr_destroy(&attr);
+    //pthread_mutex_lock(&tasks[i]->m);
+
+
     while(1)
     {
         int new_fd = accept(listen_fd, NULL, NULL);
@@ -78,6 +94,7 @@ int server_init(int port)
             perror("Fork error!");
             exit(EXIT_FAILURE);
         }if(ret == 0){
+
             if((ret = fork()) < 0){
                 perror("Fork error!");
                 exit(EXIT_FAILURE);
@@ -90,6 +107,14 @@ int server_init(int port)
             }
             //parent exit first
             exit(EXIT_SUCCESS);
+
+
+            /*
+            while(1)
+            {
+                recv_handle(new_fd);
+            }
+             */
         }
 #endif
     }
@@ -112,9 +137,13 @@ int recv_handle(int fd)
     struct tbyte tb;
     memcpy(tb.byte,pk.data,pk.len);
     tbyte2tdata(&tb,&td);
+
+    //datas = ll_new(datas);
+    pthread_mutex_lock(m);
     if(tpdb_report(&td) == 0){
         printf("insert: [%s][%s][%s]\n",td.mac,td.dtime,td.temp);
     }
+    pthread_mutex_unlock(m);
 
 }
 

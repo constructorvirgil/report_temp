@@ -74,6 +74,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/virgil/report_temp/server/ll.c">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/virgil/report_temp/server/ll.h">
+			<Option target="server"/>
+		</Unit>
 		<Unit filename="/home/virgil/report_temp/server/main.c">
 			<Option target="server"/>
 		</Unit>

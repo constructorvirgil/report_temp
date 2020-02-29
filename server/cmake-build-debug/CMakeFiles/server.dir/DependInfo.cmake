@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/virgil/report_temp/server/ll.c" "/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/server.dir/ll.c.o"
   "/home/virgil/report_temp/server/main.c" "/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/server.dir/main.c.o"
   "/home/virgil/report_temp/server/multipro_server.c" "/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/server.dir/multipro_server.c.o"
   "/home/virgil/report_temp/server/packer.c" "/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/server.dir/packer.c.o"
