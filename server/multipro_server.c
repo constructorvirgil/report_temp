@@ -22,7 +22,7 @@ struct tdata* datas;
 pthread_mutex_t* m;
 
 
-int server_init(int port)
+int multithr_server_init(int port)
 {
     struct sockaddr_in      serv_addr;
 
@@ -59,6 +59,7 @@ int server_init(int port)
     printf("server[%d] is listening on port %d\n", listen_fd,port);
 
     m = (pthread_mutex_t* )mmap(NULL,sizeof(pthread_mutex_t),PROT_READ|PROT_WRITE,MAP_SHARED|MAP_ANON,-1,0);
+    //m = (pthread_mutex_t*)malloc(sizeof(pthread_mutex_t));
 
     //make mutex
     pthread_mutexattr_t attr;

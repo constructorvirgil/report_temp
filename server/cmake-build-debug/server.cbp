@@ -74,19 +74,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/virgil/report_temp/server/ll.c">
-			<Option target="server"/>
-		</Unit>
-		<Unit filename="/home/virgil/report_temp/server/ll.h">
-			<Option target="server"/>
-		</Unit>
 		<Unit filename="/home/virgil/report_temp/server/main.c">
 			<Option target="server"/>
 		</Unit>
-		<Unit filename="/home/virgil/report_temp/server/multipro_server.c">
+		<Unit filename="/home/virgil/report_temp/server/multithr_server.c">
 			<Option target="server"/>
 		</Unit>
-		<Unit filename="/home/virgil/report_temp/server/multipro_server.h">
+		<Unit filename="/home/virgil/report_temp/server/multithr_server.h">
 			<Option target="server"/>
 		</Unit>
 		<Unit filename="/home/virgil/report_temp/server/packer.c">

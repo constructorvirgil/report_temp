@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "tempdb.h"
-#include "multipro_server.h"
+//#include "multipro_server.h"
+#include "multithr_server.h"
 #include "packer.h"
 
 

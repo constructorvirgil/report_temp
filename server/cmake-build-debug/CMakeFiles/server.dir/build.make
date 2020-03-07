@@ -83,22 +83,9 @@ CMakeFiles/server.dir/tempdb.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/tempdb.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/server/tempdb.c -o CMakeFiles/server.dir/tempdb.c.s
 
-CMakeFiles/server.dir/multipro_server.c.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/multipro_server.c.o: ../multipro_server.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/server.dir/multipro_server.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server.dir/multipro_server.c.o   -c /home/virgil/report_temp/server/multipro_server.c
-
-CMakeFiles/server.dir/multipro_server.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/multipro_server.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/virgil/report_temp/server/multipro_server.c > CMakeFiles/server.dir/multipro_server.c.i
-
-CMakeFiles/server.dir/multipro_server.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/multipro_server.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/server/multipro_server.c -o CMakeFiles/server.dir/multipro_server.c.s
-
 CMakeFiles/server.dir/packer.c.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/packer.c.o: ../packer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/server.dir/packer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/server.dir/packer.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server.dir/packer.c.o   -c /home/virgil/report_temp/server/packer.c
 
 CMakeFiles/server.dir/packer.c.i: cmake_force
@@ -111,7 +98,7 @@ CMakeFiles/server.dir/packer.c.s: cmake_force
 
 CMakeFiles/server.dir/tdata.c.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/tdata.c.o: ../tdata.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/server.dir/tdata.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/server.dir/tdata.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server.dir/tdata.c.o   -c /home/virgil/report_temp/server/tdata.c
 
 CMakeFiles/server.dir/tdata.c.i: cmake_force
@@ -122,40 +109,38 @@ CMakeFiles/server.dir/tdata.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/tdata.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/server/tdata.c -o CMakeFiles/server.dir/tdata.c.s
 
-CMakeFiles/server.dir/ll.c.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/ll.c.o: ../ll.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/server.dir/ll.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server.dir/ll.c.o   -c /home/virgil/report_temp/server/ll.c
+CMakeFiles/server.dir/multithr_server.c.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/multithr_server.c.o: ../multithr_server.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/server.dir/multithr_server.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server.dir/multithr_server.c.o   -c /home/virgil/report_temp/server/multithr_server.c
 
-CMakeFiles/server.dir/ll.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/ll.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/virgil/report_temp/server/ll.c > CMakeFiles/server.dir/ll.c.i
+CMakeFiles/server.dir/multithr_server.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/multithr_server.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/virgil/report_temp/server/multithr_server.c > CMakeFiles/server.dir/multithr_server.c.i
 
-CMakeFiles/server.dir/ll.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/ll.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/server/ll.c -o CMakeFiles/server.dir/ll.c.s
+CMakeFiles/server.dir/multithr_server.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/multithr_server.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/server/multithr_server.c -o CMakeFiles/server.dir/multithr_server.c.s
 
 # Object files for target server
 server_OBJECTS = \
 "CMakeFiles/server.dir/main.c.o" \
 "CMakeFiles/server.dir/tempdb.c.o" \
-"CMakeFiles/server.dir/multipro_server.c.o" \
 "CMakeFiles/server.dir/packer.c.o" \
 "CMakeFiles/server.dir/tdata.c.o" \
-"CMakeFiles/server.dir/ll.c.o"
+"CMakeFiles/server.dir/multithr_server.c.o"
 
 # External object files for target server
 server_EXTERNAL_OBJECTS =
 
 server: CMakeFiles/server.dir/main.c.o
 server: CMakeFiles/server.dir/tempdb.c.o
-server: CMakeFiles/server.dir/multipro_server.c.o
 server: CMakeFiles/server.dir/packer.c.o
 server: CMakeFiles/server.dir/tdata.c.o
-server: CMakeFiles/server.dir/ll.c.o
+server: CMakeFiles/server.dir/multithr_server.c.o
 server: CMakeFiles/server.dir/build.make
 server: CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

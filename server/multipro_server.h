@@ -7,7 +7,7 @@
 
 int recv_handle(int new_fd);
 int recv_temp(int fd,char* mac,char* datetime,char* temp);
-int server_init(int port);
+int multithr_server_init(int port);
 
 
 #endif //REPORT_TEMP_MULTIPRO_SERVER_H

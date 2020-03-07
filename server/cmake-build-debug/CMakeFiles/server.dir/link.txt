@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/server.dir/main.c.o CMakeFiles/server.dir/tempdb.c.o CMakeFiles/server.dir/multipro_server.c.o CMakeFiles/server.dir/packer.c.o CMakeFiles/server.dir/tdata.c.o CMakeFiles/server.dir/ll.c.o  -o server -lsqlite3 -lpthread 
+/usr/bin/cc -g   CMakeFiles/server.dir/main.c.o CMakeFiles/server.dir/tempdb.c.o CMakeFiles/server.dir/packer.c.o CMakeFiles/server.dir/tdata.c.o CMakeFiles/server.dir/multithr_server.c.o  -o server -lsqlite3 -lpthread 

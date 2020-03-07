@@ -123,33 +123,6 @@ server/fast:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
 .PHONY : server/fast
 
-ll.o: ll.c.o
-
-.PHONY : ll.o
-
-# target to build an object file
-ll.c.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/ll.c.o
-.PHONY : ll.c.o
-
-ll.i: ll.c.i
-
-.PHONY : ll.i
-
-# target to preprocess a source file
-ll.c.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/ll.c.i
-.PHONY : ll.c.i
-
-ll.s: ll.c.s
-
-.PHONY : ll.s
-
-# target to generate assembly for a file
-ll.c.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/ll.c.s
-.PHONY : ll.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -177,32 +150,32 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/main.c.s
 .PHONY : main.c.s
 
-multipro_server.o: multipro_server.c.o
+multithr_server.o: multithr_server.c.o
 
-.PHONY : multipro_server.o
+.PHONY : multithr_server.o
 
 # target to build an object file
-multipro_server.c.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/multipro_server.c.o
-.PHONY : multipro_server.c.o
+multithr_server.c.o:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/multithr_server.c.o
+.PHONY : multithr_server.c.o
 
-multipro_server.i: multipro_server.c.i
+multithr_server.i: multithr_server.c.i
 
-.PHONY : multipro_server.i
+.PHONY : multithr_server.i
 
 # target to preprocess a source file
-multipro_server.c.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/multipro_server.c.i
-.PHONY : multipro_server.c.i
+multithr_server.c.i:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/multithr_server.c.i
+.PHONY : multithr_server.c.i
 
-multipro_server.s: multipro_server.c.s
+multithr_server.s: multithr_server.c.s
 
-.PHONY : multipro_server.s
+.PHONY : multithr_server.s
 
 # target to generate assembly for a file
-multipro_server.c.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/multipro_server.c.s
-.PHONY : multipro_server.c.s
+multithr_server.c.s:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/multithr_server.c.s
+.PHONY : multithr_server.c.s
 
 packer.o: packer.c.o
 
@@ -294,15 +267,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... server"
 	@echo "... edit_cache"
-	@echo "... ll.o"
-	@echo "... ll.i"
-	@echo "... ll.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... multipro_server.o"
-	@echo "... multipro_server.i"
-	@echo "... multipro_server.s"
+	@echo "... multithr_server.o"
+	@echo "... multithr_server.i"
+	@echo "... multithr_server.s"
 	@echo "... packer.o"
 	@echo "... packer.i"
 	@echo "... packer.s"
