@@ -3,18 +3,18 @@
 
 CMakeFiles/server.dir/main.c.o: ../main.c
 CMakeFiles/server.dir/main.c.o: ../packer.h
-CMakeFiles/server.dir/main.c.o: ../sel_server.h
+CMakeFiles/server.dir/main.c.o: ../poll_server.h
 CMakeFiles/server.dir/main.c.o: ../tdata.h
 CMakeFiles/server.dir/main.c.o: ../tempdb.h
 
 CMakeFiles/server.dir/packer.c.o: ../packer.c
 CMakeFiles/server.dir/packer.c.o: ../packer.h
 
-CMakeFiles/server.dir/sel_server.c.o: ../packer.h
-CMakeFiles/server.dir/sel_server.c.o: ../sel_server.c
-CMakeFiles/server.dir/sel_server.c.o: ../sel_server.h
-CMakeFiles/server.dir/sel_server.c.o: ../tdata.h
-CMakeFiles/server.dir/sel_server.c.o: ../tempdb.h
+CMakeFiles/server.dir/poll_server.c.o: ../packer.h
+CMakeFiles/server.dir/poll_server.c.o: ../poll_server.c
+CMakeFiles/server.dir/poll_server.c.o: ../poll_server.h
+CMakeFiles/server.dir/poll_server.c.o: ../tdata.h
+CMakeFiles/server.dir/poll_server.c.o: ../tempdb.h
 
 CMakeFiles/server.dir/tdata.c.o: ../tdata.c
 CMakeFiles/server.dir/tdata.c.o: ../tdata.h

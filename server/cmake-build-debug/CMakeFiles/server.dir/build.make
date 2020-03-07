@@ -109,18 +109,18 @@ CMakeFiles/server.dir/tdata.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/tdata.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/server/tdata.c -o CMakeFiles/server.dir/tdata.c.s
 
-CMakeFiles/server.dir/sel_server.c.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/sel_server.c.o: ../sel_server.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/server.dir/sel_server.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server.dir/sel_server.c.o   -c /home/virgil/report_temp/server/sel_server.c
+CMakeFiles/server.dir/poll_server.c.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/poll_server.c.o: ../poll_server.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/server.dir/poll_server.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/server.dir/poll_server.c.o   -c /home/virgil/report_temp/server/poll_server.c
 
-CMakeFiles/server.dir/sel_server.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/sel_server.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/virgil/report_temp/server/sel_server.c > CMakeFiles/server.dir/sel_server.c.i
+CMakeFiles/server.dir/poll_server.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/poll_server.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/virgil/report_temp/server/poll_server.c > CMakeFiles/server.dir/poll_server.c.i
 
-CMakeFiles/server.dir/sel_server.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/sel_server.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/server/sel_server.c -o CMakeFiles/server.dir/sel_server.c.s
+CMakeFiles/server.dir/poll_server.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/poll_server.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/virgil/report_temp/server/poll_server.c -o CMakeFiles/server.dir/poll_server.c.s
 
 # Object files for target server
 server_OBJECTS = \
@@ -128,7 +128,7 @@ server_OBJECTS = \
 "CMakeFiles/server.dir/tempdb.c.o" \
 "CMakeFiles/server.dir/packer.c.o" \
 "CMakeFiles/server.dir/tdata.c.o" \
-"CMakeFiles/server.dir/sel_server.c.o"
+"CMakeFiles/server.dir/poll_server.c.o"
 
 # External object files for target server
 server_EXTERNAL_OBJECTS =
@@ -137,7 +137,7 @@ server: CMakeFiles/server.dir/main.c.o
 server: CMakeFiles/server.dir/tempdb.c.o
 server: CMakeFiles/server.dir/packer.c.o
 server: CMakeFiles/server.dir/tdata.c.o
-server: CMakeFiles/server.dir/sel_server.c.o
+server: CMakeFiles/server.dir/poll_server.c.o
 server: CMakeFiles/server.dir/build.make
 server: CMakeFiles/server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable server"

@@ -10,7 +10,7 @@
 stdint.h
 -
 
-/home/virgil/report_temp/server/sel_server.c
+/home/virgil/report_temp/server/poll_server.c
 unistd.h
 -
 stdlib.h
@@ -33,16 +33,16 @@ pthread.h
 -
 sys/mman.h
 -
-sys/select.h
+poll.h
 -
 tempdb.h
 /home/virgil/report_temp/server/tempdb.h
-sel_server.h
-/home/virgil/report_temp/server/sel_server.h
+poll_server.h
+/home/virgil/report_temp/server/poll_server.h
 packer.h
 /home/virgil/report_temp/server/packer.h
 
-/home/virgil/report_temp/server/sel_server.h
+/home/virgil/report_temp/server/poll_server.h
 
 /home/virgil/report_temp/server/tdata.h
 stdint.h

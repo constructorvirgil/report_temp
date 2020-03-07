@@ -3,5 +3,5 @@ project(server C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(server main.c tempdb.c packer.c tdata.c sel_server.c sel_server.h)
+add_executable(server main.c tempdb.c packer.c tdata.c poll_server.c poll_server.h)
 target_link_libraries(server sqlite3 pthread)

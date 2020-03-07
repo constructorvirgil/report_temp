@@ -83,10 +83,10 @@
 		<Unit filename="/home/virgil/report_temp/server/packer.h">
 			<Option target="server"/>
 		</Unit>
-		<Unit filename="/home/virgil/report_temp/server/sel_server.c">
+		<Unit filename="/home/virgil/report_temp/server/poll_server.c">
 			<Option target="server"/>
 		</Unit>
-		<Unit filename="/home/virgil/report_temp/server/sel_server.h">
+		<Unit filename="/home/virgil/report_temp/server/poll_server.h">
 			<Option target="server"/>
 		</Unit>
 		<Unit filename="/home/virgil/report_temp/server/tdata.c">

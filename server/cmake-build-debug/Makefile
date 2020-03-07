@@ -177,32 +177,32 @@ packer.c.s:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/packer.c.s
 .PHONY : packer.c.s
 
-sel_server.o: sel_server.c.o
+poll_server.o: poll_server.c.o
 
-.PHONY : sel_server.o
+.PHONY : poll_server.o
 
 # target to build an object file
-sel_server.c.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/sel_server.c.o
-.PHONY : sel_server.c.o
+poll_server.c.o:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/poll_server.c.o
+.PHONY : poll_server.c.o
 
-sel_server.i: sel_server.c.i
+poll_server.i: poll_server.c.i
 
-.PHONY : sel_server.i
+.PHONY : poll_server.i
 
 # target to preprocess a source file
-sel_server.c.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/sel_server.c.i
-.PHONY : sel_server.c.i
+poll_server.c.i:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/poll_server.c.i
+.PHONY : poll_server.c.i
 
-sel_server.s: sel_server.c.s
+poll_server.s: poll_server.c.s
 
-.PHONY : sel_server.s
+.PHONY : poll_server.s
 
 # target to generate assembly for a file
-sel_server.c.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/sel_server.c.s
-.PHONY : sel_server.c.s
+poll_server.c.s:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/poll_server.c.s
+.PHONY : poll_server.c.s
 
 tdata.o: tdata.c.o
 
@@ -273,9 +273,9 @@ help:
 	@echo "... packer.o"
 	@echo "... packer.i"
 	@echo "... packer.s"
-	@echo "... sel_server.o"
-	@echo "... sel_server.i"
-	@echo "... sel_server.s"
+	@echo "... poll_server.o"
+	@echo "... poll_server.i"
+	@echo "... poll_server.s"
 	@echo "... tdata.o"
 	@echo "... tdata.i"
 	@echo "... tdata.s"
