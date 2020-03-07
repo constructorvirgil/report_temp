@@ -77,16 +77,16 @@
 		<Unit filename="/home/virgil/report_temp/server/main.c">
 			<Option target="server"/>
 		</Unit>
-		<Unit filename="/home/virgil/report_temp/server/multithr_server.c">
-			<Option target="server"/>
-		</Unit>
-		<Unit filename="/home/virgil/report_temp/server/multithr_server.h">
-			<Option target="server"/>
-		</Unit>
 		<Unit filename="/home/virgil/report_temp/server/packer.c">
 			<Option target="server"/>
 		</Unit>
 		<Unit filename="/home/virgil/report_temp/server/packer.h">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/virgil/report_temp/server/sel_server.c">
+			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/virgil/report_temp/server/sel_server.h">
 			<Option target="server"/>
 		</Unit>
 		<Unit filename="/home/virgil/report_temp/server/tdata.c">

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/server.dir/main.c.o"
-  "CMakeFiles/server.dir/multithr_server.c.o"
   "CMakeFiles/server.dir/packer.c.o"
+  "CMakeFiles/server.dir/sel_server.c.o"
   "CMakeFiles/server.dir/tdata.c.o"
   "CMakeFiles/server.dir/tempdb.c.o"
   "server"

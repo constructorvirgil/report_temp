@@ -3,19 +3,19 @@
 
 CMakeFiles/server.dir/main.c.o
  /home/virgil/report_temp/server/main.c
- /home/virgil/report_temp/server/multithr_server.h
  /home/virgil/report_temp/server/packer.h
- /home/virgil/report_temp/server/tdata.h
- /home/virgil/report_temp/server/tempdb.h
-CMakeFiles/server.dir/multithr_server.c.o
- /home/virgil/report_temp/server/multithr_server.c
- /home/virgil/report_temp/server/multithr_server.h
- /home/virgil/report_temp/server/packer.h
+ /home/virgil/report_temp/server/sel_server.h
  /home/virgil/report_temp/server/tdata.h
  /home/virgil/report_temp/server/tempdb.h
 CMakeFiles/server.dir/packer.c.o
  /home/virgil/report_temp/server/packer.c
  /home/virgil/report_temp/server/packer.h
+CMakeFiles/server.dir/sel_server.c.o
+ /home/virgil/report_temp/server/packer.h
+ /home/virgil/report_temp/server/sel_server.c
+ /home/virgil/report_temp/server/sel_server.h
+ /home/virgil/report_temp/server/tdata.h
+ /home/virgil/report_temp/server/tempdb.h
 CMakeFiles/server.dir/tdata.c.o
  /home/virgil/report_temp/server/tdata.c
  /home/virgil/report_temp/server/tdata.h

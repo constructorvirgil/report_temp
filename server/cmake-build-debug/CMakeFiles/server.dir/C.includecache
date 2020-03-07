@@ -6,17 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/virgil/report_temp/server/main.c
-stdio.h
--
-tempdb.h
-/home/virgil/report_temp/server/tempdb.h
-multithr_server.h
-/home/virgil/report_temp/server/multithr_server.h
-packer.h
 /home/virgil/report_temp/server/packer.h
+stdint.h
+-
 
-/home/virgil/report_temp/server/multithr_server.c
+/home/virgil/report_temp/server/sel_server.c
 unistd.h
 -
 stdlib.h
@@ -39,18 +33,16 @@ pthread.h
 -
 sys/mman.h
 -
+sys/select.h
+-
 tempdb.h
 /home/virgil/report_temp/server/tempdb.h
+sel_server.h
+/home/virgil/report_temp/server/sel_server.h
 packer.h
 /home/virgil/report_temp/server/packer.h
-multithr_server.h
-/home/virgil/report_temp/server/multithr_server.h
 
-/home/virgil/report_temp/server/multithr_server.h
-
-/home/virgil/report_temp/server/packer.h
-stdint.h
--
+/home/virgil/report_temp/server/sel_server.h
 
 /home/virgil/report_temp/server/tdata.h
 stdint.h
