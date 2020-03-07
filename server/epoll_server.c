@@ -1,6 +1,9 @@
 //
-// Created by virgil on 3/6/20.
+// Created by virgil on 3/7/20.
 //
+
+
+
 
 #include <unistd.h>
 #include <stdlib.h>
@@ -13,10 +16,11 @@
 #include <arpa/inet.h>
 #include <pthread.h>
 #include <sys/mman.h>
-#include <poll.h>
+#include <sys/epoll.h>
 #include "tempdb.h"
-#include "poll_server.h"
 #include "packer.h"
+#include "epoll_server.h"
+
 
 int listen_fd = -1;
 struct tdata* datas;
@@ -25,9 +29,10 @@ pthread_mutex_t* m;
 int server_init(int port)
 {
     struct sockaddr_in      serv_addr;
-    struct pollfd fds_array[1024];
-    fd_set rdset;
-    int max;
+    int epollfd;
+    struct epoll_event event;
+    struct epoll_event event_array[MAX_EVENTS] = {0};
+    int events;
 
     //init socket
     listen_fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -72,82 +77,84 @@ int server_init(int port)
     pthread_mutexattr_destroy(&attr);
     //pthread_mutex_lock(&tasks[i]->m);
 
-    memset(fds_array,0,ARRAY_SIZE(fds_array));
-
-    for(int i=0; i<ARRAY_SIZE(fds_array) ; i++)
+    if( (epollfd=epoll_create(MAX_EVENTS)) < 0 )
     {
-        fds_array[i].fd=-1;
+        perror("epoll_create() failed!");
+        close(listen_fd);
+        exit(EXIT_FAILURE);
     }
-    fds_array[0].fd = listen_fd;
-    fds_array[0].events = POLLIN;
-    max = 0;
+
+    //event.events = EPOLLIN|EPOLLET;
+    event.events = EPOLLIN;
+    event.data.fd = listen_fd;
+    if( epoll_ctl(epollfd, EPOLL_CTL_ADD, listen_fd, &event) < 0)
+    {
+        perror("Epoll add listen socket failed!");
+        close(listen_fd);
+        exit(EXIT_FAILURE);
+    }
 
     while(1)
     {
-        int r;
-        int new_fd;
-        /* program will blocked here */
-        r = poll(fds_array, max + 1, -1);
-        if(r < 0)
+        int rv;
+        events = epoll_wait(epollfd, event_array, MAX_EVENTS, -1);
+        if(events < 0)
         {
-            perror("Poll failed!");
+            perror("Epoll failed!");
             break;
         }
-        else if(r == 0)
+        else if(events == 0)
         {
-            perror("Poll timeout!");
+            perror("Epoll timeout!");
             continue;
         }
-        /* listen socket get event means new client start connect now */
 
-        if (fds_array[0].revents & POLLIN)
+        for(int i=0; i<events; i++)
         {
-            if( (new_fd = accept(listen_fd, (struct sockaddr *)NULL, NULL)) < 0)
+            if ( (event_array[i].events&EPOLLERR) || (event_array[i].events&EPOLLHUP) )
             {
-                perror("Accept new client failed!");
+                printf("epoll_wait get error on fd[%d]: %s\n", event_array[i].data.fd, strerror(errno));
+                epoll_ctl(epollfd, EPOLL_CTL_DEL, event_array[i].data.fd, NULL);
+                close(event_array[i].data.fd);
                 continue;
             }
-            int found = 0;
 
-            int i;
-            for(i=1; i<ARRAY_SIZE(fds_array) ; i++)
+
+            if( event_array[i].data.fd == listen_fd )
             {
-                if( fds_array[i].fd < 0 )
+                int new_fd;
+                if( (new_fd=accept(listen_fd, (struct sockaddr *)NULL, NULL)) < 0)
                 {
-                    printf("accept new client[%d] and add it into array\n", new_fd );
-                    fds_array[i].fd = new_fd;
-                    fds_array[i].events = POLLIN;
-                    found = 1;
-                    break;
-                }
-            }
-            if( !found )
-            {
-                printf("accept new client[%d] but full, so refuse it\n", new_fd);
-                close(new_fd);
-                continue;
-            }
-            max = i>max ? i : max;
-            //if only listen_fd is ready then continue
-            if (--r <= 0)
-                continue;
-        }
-        else /* data arrive from already connected client */
-        {
-            for(int i=1; i<ARRAY_SIZE(fds_array); i++)
-            {
-                if( fds_array[i].fd < 0 || !(fds_array[i].revents & POLLIN) )
+                    printf("accept new client failure: %s\n", strerror(errno));
                     continue;
-
+                }
+                event.data.fd = new_fd;
+                event.events = EPOLLIN;
+                if( epoll_ctl(epollfd, EPOLL_CTL_ADD, new_fd, &event) < 0 )
+                {
+                    perror("Epoll add client socket failed!");
+                    close(event_array[i].data.fd);
+                    continue;
+                }
+                printf("epoll add new client socket[%d] ok.\n", new_fd);
+            }
+            else /* already connected client socket get data incoming */
+            {
                 //recv_handle...
-                if(recv_handle(fds_array[i].fd) < 0){
-                    printf("Client[%d] disconnected!\n",fds_array[i].fd);
-                    close(fds_array[i].fd);
-                    fds_array[i].fd = -1;
+                if(recv_handle(event_array[i].data.fd) < 0){
+                    printf("Client[%d] disconnected!\n",event_array[i].data.fd);
+                    epoll_ctl(epollfd, EPOLL_CTL_DEL, event_array[i].data.fd, NULL);
+                    close(event_array[i].data.fd);
+                    continue;
                 }
 
             }
         }
+
+
+
+
+
 
     }
 

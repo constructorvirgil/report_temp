@@ -122,12 +122,6 @@ int server_init(int port)
 
         pthread_attr_destroy(&thread_attr);
 
-        /*
-        while(1)
-        {
-            recv_handle(new_fd);
-        }
-         */
 
     }
 

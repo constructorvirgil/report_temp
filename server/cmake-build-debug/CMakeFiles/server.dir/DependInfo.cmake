@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/virgil/report_temp/server/epoll_server.c" "/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/server.dir/epoll_server.c.o"
   "/home/virgil/report_temp/server/main.c" "/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/server.dir/main.c.o"
   "/home/virgil/report_temp/server/packer.c" "/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/server.dir/packer.c.o"
-  "/home/virgil/report_temp/server/poll_server.c" "/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/server.dir/poll_server.c.o"
   "/home/virgil/report_temp/server/tdata.c" "/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/server.dir/tdata.c.o"
   "/home/virgil/report_temp/server/tempdb.c" "/home/virgil/report_temp/server/cmake-build-debug/CMakeFiles/server.dir/tempdb.c.o"
   )

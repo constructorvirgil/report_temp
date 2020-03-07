@@ -162,7 +162,6 @@ int recv_handle(int fd)
     struct pack_data pk;
     struct tdata td;
     if((r = recv_pack(fd,&pk)) < 0){
-        printf("Client[%d] disconnected",fd);
         close(fd);
         return -1;
     }

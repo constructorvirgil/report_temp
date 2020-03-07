@@ -123,6 +123,33 @@ server/fast:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
 .PHONY : server/fast
 
+epoll_server.o: epoll_server.c.o
+
+.PHONY : epoll_server.o
+
+# target to build an object file
+epoll_server.c.o:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/epoll_server.c.o
+.PHONY : epoll_server.c.o
+
+epoll_server.i: epoll_server.c.i
+
+.PHONY : epoll_server.i
+
+# target to preprocess a source file
+epoll_server.c.i:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/epoll_server.c.i
+.PHONY : epoll_server.c.i
+
+epoll_server.s: epoll_server.c.s
+
+.PHONY : epoll_server.s
+
+# target to generate assembly for a file
+epoll_server.c.s:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/epoll_server.c.s
+.PHONY : epoll_server.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -176,33 +203,6 @@ packer.s: packer.c.s
 packer.c.s:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/packer.c.s
 .PHONY : packer.c.s
-
-poll_server.o: poll_server.c.o
-
-.PHONY : poll_server.o
-
-# target to build an object file
-poll_server.c.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/poll_server.c.o
-.PHONY : poll_server.c.o
-
-poll_server.i: poll_server.c.i
-
-.PHONY : poll_server.i
-
-# target to preprocess a source file
-poll_server.c.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/poll_server.c.i
-.PHONY : poll_server.c.i
-
-poll_server.s: poll_server.c.s
-
-.PHONY : poll_server.s
-
-# target to generate assembly for a file
-poll_server.c.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/poll_server.c.s
-.PHONY : poll_server.c.s
 
 tdata.o: tdata.c.o
 
@@ -267,15 +267,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... server"
 	@echo "... edit_cache"
+	@echo "... epoll_server.o"
+	@echo "... epoll_server.i"
+	@echo "... epoll_server.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... packer.o"
 	@echo "... packer.i"
 	@echo "... packer.s"
-	@echo "... poll_server.o"
-	@echo "... poll_server.i"
-	@echo "... poll_server.s"
 	@echo "... tdata.o"
 	@echo "... tdata.i"
 	@echo "... tdata.s"
